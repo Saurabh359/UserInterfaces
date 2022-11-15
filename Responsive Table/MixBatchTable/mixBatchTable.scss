@@ -1,0 +1,287 @@
+// if increasing rows in table, increase the number below as well
+$rows : 11;   // no. of rows in table  ( confirm twice before changing)
+$visible-rows : 11;
+$tables-height : calc(55px * $rows + 120px);
+$table-container-height : calc(55px * $visible-rows + 135px);
+
+#mixbatchtable-page{
+    width: 100%;
+    height: 100%;
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    padding: 20px 0;
+    position: relative;
+
+    .empty-plan-banner{
+        position: absolute;
+        z-index: 999;
+        top: 240px;
+        background-color: #fff;
+        left: 55%;
+        padding: 0 20px;
+    }
+
+    #mixbatch-table{
+        // height: $table-container-height;
+        width: 100%;
+        overflow : auto;
+        display : flex;
+                
+        &::-webkit-scrollbar{
+            background-color: #fff;
+            height: 15px;
+            width: 15px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: #666;
+            border-radius: 20px;
+            border: 4px solid #fff;
+        }
+        
+        &::-webkit-scrollbar-button:horizontal:start{
+            background-color : #666;
+            width : 20%; //19.85%;
+        }
+        &::-webkit-scrollbar-button:horizontal:end{
+            background-color : #666;
+            width : 5%;
+        }  
+
+        .batch-columns{
+            min-width: 10%;
+            // height: $tables-height;
+            flex-shrink: 0;
+            position: relative;
+
+            &:nth-child(6){
+                padding-left: 10px;
+            }
+            &:nth-last-child(2){
+                padding-right: 10px;
+            }
+            
+            .header-col{
+                position: sticky;
+                height: 120px;
+                top: 0;
+                border-bottom: 1px solid #ccc;
+                background-color: #fff;
+                z-index: 10;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                &>div{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &:first-child{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            padding-left: 10px;
+                        }
+                    }
+            }
+
+            .data-col{
+                height: 55px;
+                border-bottom: 1px solid #ccc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    width: 100%;
+                    background-color: #CBE3B6;
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        #inspection-static, #inspection-static1, #inspection-static2,
+        #inspection-static3, #inspection-static4{
+            background: #fff;
+            position: sticky;
+            flex-shrink: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 20;
+            // height: $tables-height;
+
+            .header-col{
+                position: sticky;
+                height: 120px;
+                top: 0;
+                border-bottom: 1px solid #ccc;
+                background-color: #fff;
+                z-index: 10;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                &>div{
+                        width: 100%;
+                        height: 55px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        &:first-child{
+                            height: 63px;
+                            align-items: flex-end;
+                            padding-bottom: 10px;
+                            font-weight: 600;
+                            font-size: 16px;
+                            color: #999;
+                        }
+
+                        &:last-child{
+                            border-top: 2px solid #ccc;
+                        }
+                    }
+            }
+
+            .data-col{
+                height: 55px;
+                border-bottom: 1px solid #ccc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p{
+                    width: 100%;
+                    padding-left: 10px;
+                }   
+            }
+            .empty-row{
+                justify-content: flex-start;
+                margin-left: -12%;
+                font-weight: 600;
+                position: sticky;
+                top:65px;
+                z-index: 11;
+                background-color: #fff;
+            }
+        }
+
+        #inspection-static{
+            width: 3%;
+            left: 0;
+            .header-col{
+                &>div{
+                    justify-content: center;
+                }
+            }
+        }
+
+        #inspection-static1{
+            width: 19%;
+            left: 3%;
+            .data-col{
+                p{
+                    padding-left: 1px;
+                }
+            }
+        }
+        #inspection-static2{
+            width: 6%;
+            left: 22%;
+        }
+        #inspection-static3{
+            width: 6%;
+            left: 28%;
+        }
+        #inspection-static4{
+            width: 6%;
+            left: 34%;
+            .header-col{
+                padding-bottom: 0px;
+                &>div:last-child{
+                    border-right: 2px solid #ccc;
+                }
+            }
+            .data-col{
+                border-right: 2px solid #ccc;
+            }
+        }
+
+        #batch-average{
+            width: 10%;
+            background-color: #ECEEEF;
+            position: sticky;
+            flex-shrink: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+            // height: $tables-height;
+
+            .header-col{
+                position: sticky;
+                height: 120px;
+                top: 0;
+                border-bottom: 1px solid #ccc;
+                background-color: #ECEEEF;
+                z-index: 10;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                &>div{
+                        width: 100%;
+                        height: 55px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &:first-child{
+                            height: 63px;
+                            background-color: #fff;
+                            justify-content: flex-start;
+                            align-items: flex-end;
+                            padding: 0 0 10px 20px;
+                            font-weight: 600;
+                            font-size: 16px;
+                            color: #999;
+                        }
+
+                        &:last-child{
+                            border-top: 2px solid #ccc;
+                            border-left: 2px solid #ccc;
+                        }
+                    }
+            }
+
+            .data-col{
+                height: 55px;
+                border-bottom: 1px solid #ccc;
+                border-left:  2px solid #ccc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                p{
+                    width: 100%;
+                    background-color: #CBE3B6;
+                    padding-left: 20px;
+                }
+            }
+        }
+
+
+
+    }
+}
