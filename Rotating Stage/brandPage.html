@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindset Learner</title>
+    <style>
+        body{
+            display: flex;
+			flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			background-color: #f7ae10;
+        }
+
+		.center-img{
+			margin-bottom: 300px;
+			height: 50px;
+		}
+
+		.container{
+			width: 200px;
+			background-color: cadetblue;
+			position: relative;
+			perspective: 1000px;
+		}
+		
+		.carousel{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			transform-style: preserve-3d;
+			animation: rotate360 20s infinite forwards linear;
+		}
+
+		.img{
+			position: absolute;
+			width: 200px;
+			background-color: #010101b7;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: aliceblue;
+			font-size: 40px;
+			top: 20px; 
+			left: 10px;
+		}
+
+		.floor{
+			position: absolute;
+			height: 900px;
+			width: 900px;
+			top: 0;
+			margin-left: -340px;
+			margin-top: -380px;
+			transform: rotateX(90deg) translateY(-10px);
+			background-color: #ffffff;
+			border-radius: 90%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.floor-center{
+			border-radius: 90%;
+			width: 80%;
+			height: 80%;
+			background-color: #f7ae10;
+		}
+
+		.img:nth-child(1){
+			height: 250px;
+			width: 300px;
+			background: transparent;
+			transform: rotateY(0deg) translateX(-50px) translateY(-250px);
+		}
+		.img:nth-child(2){
+			transform: rotateY(0deg) translateZ(300px) rotateX(-10deg);
+		}
+		.img:nth-child(3){
+			transform: rotateY(51deg) translateZ(300px) rotateX(-10deg);
+		}
+		.img:nth-child(4){
+			transform: rotateY(102deg) translateZ(300px) rotateX(-10deg);
+		}
+		.img:nth-child(5){
+			transform: rotateY(153deg) translateZ(300px) rotateX(-10deg);
+		}
+		.img:nth-child(6){
+			transform: rotateY(204deg) translateZ(300px) rotateX(-10deg);
+		}
+		.img:nth-child(7){
+			transform: rotateY(255deg) translateZ(300px) rotateX(-10deg);
+		}
+		.img:nth-child(8){
+			transform: rotateY(306deg) translateZ(300px) rotateX(-10deg);
+		}
+
+		@keyframes rotate360 {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(-360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+	<img class="center-img" src="./pubg1.png"/>
+	<div class="container">	
+		<div class="carousel">
+			<img class="img" src="./pubg2.png" />
+			<div class="img">W</div>
+			<div class="img">E</div>
+			<div class="img">L</div>
+			<div class="img">C</div>
+			<div class="img">O</div>
+			<div class="img">M</div>
+			<div class="img">E</div>
+			<div class="floor">
+				<div class="floor-center"></div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
