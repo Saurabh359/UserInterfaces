@@ -1,3 +1,3 @@
 # UserInterfaces
 
-<img src="./Rotating Stage/img.png" height="60" width="60" >
+<img src="https://github.com/Saurabh359/UserInterfaces/blob/main/Rotating%20Stage/img.png" >
